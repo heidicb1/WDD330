@@ -10,11 +10,15 @@ async function getData() {
         const lists = data.prophets;
         console.log(lists);
         const node = document.querySelector('.list');
-        lists.map(item => { 
+        //For every prophet create a card that includes information ``
+        lists.map(prophet => { 
             let card = document.createElement('div');
             let name = document.createElement('h2');
-            name.innerHTML = item.name;
+            let birthdate = document.createElement('p');
+            let bithplace = document.createElement('p');
+            name.innerHTML = `${prophet.name} ${prophet.lastname} `;
             card.appendChild(name);
+            card.appendChild(birthdate);
             node.appendChild(card);
         })
         
